@@ -1,0 +1,48 @@
+.search-input-wrapper {
+    width: 50%;
+    margin: 9px auto;
+}
+
+@media screen and (max-width: 1400px) {
+    ::ng-deep {
+        .dropdown-menu {
+            width: 561px !important;
+        }
+    }
+}
+
+@media screen and (max-width:1200px) {
+    ::ng-deep {
+        .dropdown-menu {
+            width: 471px !important;
+        }
+    }
+}
+
+@media screen and (max-width:1000px) {
+    ::ng-deep {
+        .dropdown-menu {
+            width: 350px !important;
+        }
+    }
+}
+
+@media screen and (max-width:771px) {
+    ::ng-deep {
+        .dropdown-menu {
+            width: 261px !important;
+        }
+    }
+}
+
+@media screen and (max-width:587px) {
+    ::ng-deep {
+        .search-input-wrapper {
+            width: 190px !important;
+        }
+
+        .dropdown-menu {
+            width: 190px !important;
+        }
+    }
+}

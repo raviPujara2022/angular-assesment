@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="search-wrapper">
+      <input type="search" [(ngModel)]="searchString" placeholder="Search Pokemon..." (input)="search()"
+        [typeahead]="filterData" (typeaheadOnSelect)="onSelect($event)" [ngModelOptions]="{standalone: true}"
+        class="search-input-wrapper form-control">
+    </div>
+  </div>
+  <div class="row">
+    <ng-container *ngFor="let item of pokemonList ">
+      <div class="col-xs-12 col-sm-6 col-lg-4 col-md-3" (click)="onPokemonClick(item.url)">
+        <div class="card mb-4">
+          <img class="card-img-top bg-light" src="{{ item.imageUrl }}" alt="{{ item.name }} image"
+            onError="src='../../../assets/placeholder.jpg'" />
+          <div class="card-body">
+            <h5 class="card-title text-center">{{ item.name | titlecase }}</h5>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="d-flex justify-content-center">
+    <pagination *ngIf="pokemonList.length >= 20" [directionLinks]="true" [totalItems]="1140" [itemsPerPage]="20"
+      [maxSize]="5" (pageChanged)="pageChanged($event)"></pagination>
+  </div>
+</div>

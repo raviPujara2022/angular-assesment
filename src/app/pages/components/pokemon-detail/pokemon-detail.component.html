@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-xs-12 col-sm-10 mx-auto">
+      <div class="card d-flex flex-column flex-md-row w-100">
+        <div class="m-4 col-md-6">
+          <img class="card-img-top border" src="{{ pokemonDetail?.imageUrl }}" alt="{{pokemonDetail?.name}}">
+        </div>
+        <div class="card-body col-12">
+          <h1 class="mb-4">{{ pokemonDetail?.name | uppercase }}</h1>
+          <div class="card-text">
+            <div class="d-flex gap-4">
+              <div>
+                <strong> Height: </strong>
+                <span class="badges">{{ pokemonDetail?.height }}</span>
+              </div>
+              <div>
+                <strong> Weight: </strong>
+                <span class="badges">{{ pokemonDetail?.weight }}</span>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="card-text">
+            <div>
+              <strong> Abilities: </strong>
+              <div class="d-flex flex-row flex-wrap gap-2">
+                <span *ngFor="let item of pokemonDetail?.abilities; let i = index" class="badges">{{ item.ability.name |
+                  titlecase}}</span>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="card-text">
+            <div>
+              <strong> Moves: </strong>
+              <div class="d-flex flex-row flex-wrap gap-2">
+                <span *ngFor="let data of pokemonDetail.moves; let i = index"><span *ngIf="i <= 10" class="badges">{{
+                    data.move.name | titlecase }}</span></span>
+              </div>
+            </div>
+          </div>
+          <div class="card-text">
+            <div>
+              <strong>Stats: </strong>
+              <div class="d-flex flex-row flex-wrap gap-1">
+                <span class="badges" *ngFor="let item of pokemonDetail?.stats; let i = index">{{ item.stat.name |
+                  titlecase
+                  }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
